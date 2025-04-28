@@ -33,19 +33,19 @@ export  function PagRegistro() {
           {/* Formulario Paciente */}
           <div className="w-1/2 px-8 py-12 flex flex-col items-center justify-center gap-4">
             <h2 className="text-2xl font-bold text-red-600 mb-4 text-center">Registro Paciente</h2>
-            <input type="text" placeholder="Nombre completo" className="border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-            <input type="email" placeholder="Correo electrónico" className="border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-            <input type="password" placeholder="Contraseña" className="border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <input type="text" placeholder="Nombre completo" className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <input type="email" placeholder="Correo electrónico" className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <input type="password" placeholder="Contraseña" className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
             <button className="bg-red-600 px-20 py-2 rounded-xl text-white">Registrarse</button>
           </div>
 
           {/* Formulario Médico */}
           <div className="w-1/2 px-8 py-12 flex flex-col items-center justify-center gap-4">
             <h2 className="text-2xl font-bold text-red-600 mb-4 text-center">Registro Médico</h2>
-            <input type="text" placeholder="Nombre completo" className="input" />
-            <input type="text" placeholder="Número de colegiado" className="input" />
-            <input type="email" placeholder="Correo electrónico" className="input" />
-            <input type="password" placeholder="Contraseña" className="input" />
+            <input type="text" placeholder="Nombre completo" className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <input type="text" placeholder="Establecimiento de atencion" className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <input type="email" placeholder="Correo electrónico" className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <input type="password" placeholder="Contraseña" className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
             <button className="bg-red-600 px-20 py-2 rounded-xl text-white">Registrarse</button>
           </div>
         </div>

@@ -13,17 +13,26 @@ export function PagLogin() {
         signin(data);
      });
     return (
-        <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-400 to-blue-600">
-            <div className="container bg-sky-400 max-w-md p-6 rounded-lg shadow-lg mx-auto mt-10">
-                <form onSubmit={onSubmit} >
+        <div className="min-h-screen bg-gray-900 flex items-center justify-center px-40">
+            <div className="relative bg-white w-full max-w-md h-[450px] rounded-3xl shadow-lg overflow-hidden flex flex-col justify-center p-8">
+            <h2 className="text-3xl font-bold text-red-600 mb-6 text-center">Iniciar Sesión</h2>
+                <form onSubmit={onSubmit} className="flex flex-col gap-4 ">
 
-                    <input type="text" {...register("rut", { required: true})} className='w-full bg-zinc-700 text-white px-4 py-2 rounded-md my-2' placeholder="Rut" />
-                    <p classname="text-red-500">{formState.errors.rut?.message}</p>
+                <div className="flex flex-col items-center">
+                        <input
+                            type="text"
+                            {...register("rut", { required: true })} className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Rut"/>
+                        <p className="text-red-500 text-sm mt-1">{formState.errors.rut?.message}</p>
+                </div>
 
-                    <input type="password" {...register("password", { required: true})} className='w-full bg-zinc-700 text-white px-4 py-2 rounded-md my-2' placeholder="Contraseña" />
-                    <p classname="text-red-500">{formState.errors.password?.message}</p>
+                    <div className="flex flex-col items-center">
+                        <input
+                            type="password"
+                            {...register("password", { required: true })} className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Contraseña"/>
+                        <p className="text-red-500 text-sm mt-1">{formState.errors.password?.message}</p>
+                    </div>
 
-                    <button className='text-white bg-red-600 w-full px-4 py-2 rounded-md'>Iniciar Sesión</button>
+                    <button className='bg-red-600 px-6 py-2 rounded-xl text-white font-semibold mt-4'>Iniciar Sesión</button>
                 </form>
             </div>
         </div>
