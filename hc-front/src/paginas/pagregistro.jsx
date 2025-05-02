@@ -1,14 +1,24 @@
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 
 export  function PagRegistro() {
+  const { register, handleSubmit, formState } = useForm({
+  });
   const [tipo, setTipo] = useState("paciente");
+
+  const onSubmit = async (values) => {
+    const data = {...values, tipo };
+    await signup(data);
+  }
 
   return (
     <div className="min-h-screen bg-gray-900 flex items-center justify-center px-4">
-      <div className="relative bg-white w-full max-w-md h-[500px] rounded-3xl shadow-lg overflow-hidden">
+      <div className="relative bg-white w-full max-w-md min-h-[500px] rounded-3xl shadow-lg overflow-hidden">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         {/* Toggle */}
         <div className="flex justify-center mt-6 space-x-2 z-10 relative">
           <button
+            type="button"
             onClick={() => setTipo("paciente")}
             className={`px-5 py-2 rounded-full font-semibold ${
               tipo === "paciente" ? "bg-red-600 text-white" : "bg-gray-200"
@@ -17,6 +27,7 @@ export  function PagRegistro() {
             Paciente
           </button>
           <button
+          type="button"
             onClick={() => setTipo("medico")}
             className={`px-5 py-2 rounded-full font-semibold ${
               tipo === "medico" ? "bg-red-600 text-white" : "bg-gray-200"
@@ -33,22 +44,117 @@ export  function PagRegistro() {
           {/* Formulario Paciente */}
           <div className="w-1/2 px-8 py-12 flex flex-col items-center justify-center gap-4">
             <h2 className="text-2xl font-bold text-red-600 mb-4 text-center">Registro Paciente</h2>
-            <input type="text" placeholder="Nombre completo" className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-            <input type="email" placeholder="Correo electrónico" className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-            <input type="password" placeholder="Contraseña" className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-            <button className="bg-red-600 px-20 py-2 rounded-xl text-white">Registrarse</button>
+            <input
+              {...register("nombre",{required: true })}
+              type="text" 
+              className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Nombre completo"
+              />
+            <input
+              {...register("rut",{required: true })}
+              type="text"
+              className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Rut"
+            />
+            <input
+              {...register("email",{required: true })}
+              type="email" 
+              className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" 
+              placeholder="Correo electrónico" 
+            />
+            <select
+              {...register("sexo",{required: true })}
+              className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              <option value="">Seleccione su sexo</option>
+              <option value="masculino">Masculino</option>
+              <option value="femenino">Femenino</option>
+            </select>
+            <input
+              {...register("password",{required: true })} 
+              type="password" 
+              className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" 
+              placeholder="Contraseña" 
+              />
+            <div className="flex items-center gap-2">
+              <input
+                type="checkbox"
+                {...register("terminos",{required: true })}
+                className="w-4 h-4 text-red-600 border-gray-300 rounded focus:ring-red-500"
+              />
+              <label className ="text-black text-sm">
+                He leído y acepto los terminos y condiciones.
+              </label>
+            </div>
+            <button 
+            type="submit"
+            className="bg-red-600 px-20 py-2 rounded-xl text-white"
+            >
+              Registrarse
+              </button>
           </div>
 
           {/* Formulario Médico */}
           <div className="w-1/2 px-8 py-12 flex flex-col items-center justify-center gap-4">
             <h2 className="text-2xl font-bold text-red-600 mb-4 text-center">Registro Médico</h2>
-            <input type="text" placeholder="Nombre completo" className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-            <input type="text" placeholder="Establecimiento de atencion" className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-            <input type="email" placeholder="Correo electrónico" className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-            <input type="password" placeholder="Contraseña" className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-            <button className="bg-red-600 px-20 py-2 rounded-xl text-white">Registrarse</button>
+            <input 
+              type="text" 
+              {...register("nombre",{required: true })} 
+              className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Nombre completo" 
+            />
+            <input
+              type="text" 
+              {...register("rut",{required: true })} 
+              className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Rut"
+            />
+            <select
+              {...register("sexo",{required: true })}
+              className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              <option value="">Seleccione su sexo</option>
+              <option value="masculino">Masculino</option>
+              <option value="femenino">Femenino</option>
+            </select>
+            <input 
+              {...register("establecimiento",{required: true })}
+              type="text" 
+              className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Establecimiento de atencion" 
+            />
+            <input
+              {...register("email",{required: true })}
+              type="email" 
+              className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" 
+              placeholder="Correo electrónico" 
+            />
+            <input
+            {...register("password",{required: true })}
+            type="password" 
+            className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Contraseña" 
+            />
+            <div className="flex items-center gap-2">
+              <input
+                type="checkbox"
+                {...register("terminos",{required: true })}
+                className="w-4 h-4 text-red-600 border-gray-300 rounded focus:ring-red-500"
+              />
+              <label className ="text-black text-sm">
+                He leído y acepto los terminos y condiciones.
+              </label>
+            </div>
+
+            <button 
+            type="submit"
+            className="bg-red-600 px-20 py-2 rounded-xl text-white"
+            >
+              Registrarse
+              </button>
+            </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );

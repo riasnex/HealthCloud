@@ -19,16 +19,12 @@ export function PagLogin() {
                 <form onSubmit={onSubmit} className="flex flex-col gap-4 ">
 
                 <div className="flex flex-col items-center">
-                        <input
-                            type="text"
-                            {...register("rut", { required: true })} className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Rut"/>
+                        <input type="text" {...register("rut", { required: true })} className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Rut"/>
                         <p className="text-red-500 text-sm mt-1">{formState.errors.rut?.message}</p>
                 </div>
 
                     <div className="flex flex-col items-center">
-                        <input
-                            type="password"
-                            {...register("password", { required: true })} className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Contraseña"/>
+                        <input type="password" {...register("password", { required: true })} className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Contraseña"/>
                         <p className="text-red-500 text-sm mt-1">{formState.errors.password?.message}</p>
                     </div>
 
