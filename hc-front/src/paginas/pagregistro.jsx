@@ -12,7 +12,10 @@ export  function PagRegistro() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-900 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-[url('/FondoRegistro.png')] bg-cover bg-center flex items-center justify-center px-4">
+      <div className="absolute top-4 left-4">
+        <img src="/LogoHC.png" alt="Logo" className="h-26" />
+      </div>
       <div className="relative bg-white w-full max-w-md min-h-[500px] rounded-3xl shadow-lg overflow-hidden">
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         {/* Toggle */}
@@ -62,6 +65,24 @@ export  function PagRegistro() {
               className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" 
               placeholder="Correo electrónico" 
             />
+            <input
+              {...register("telefono",{required: true })}
+              type="tel" 
+              className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" 
+              placeholder="Teléfono"
+            />
+            <input
+              {...register("emergencia",{required: true })}
+              type="tel"
+              className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Teléfono de emergencia"
+            />
+            <input
+              {...register("direccion",{required: true })}
+              type="text"
+              className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Dirección"
+            />
             <select
               {...register("sexo",{required: true })}
               className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -70,12 +91,21 @@ export  function PagRegistro() {
               <option value="masculino">Masculino</option>
               <option value="femenino">Femenino</option>
             </select>
+            <select
+              {...register("prevision",{required: true })}
+              className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              <option value="">Previsión de Salud:</option>
+              <option value="fonasa">Fonasa</option>
+              <option value="isapres">Isapres</option>
+            </select>
             <input
               {...register("password",{required: true })} 
               type="password" 
               className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" 
               placeholder="Contraseña" 
               />
+              
             <div className="flex items-center gap-2">
               <input
                 type="checkbox"
@@ -109,6 +139,24 @@ export  function PagRegistro() {
               className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Rut"
             />
+             <input
+              {...register("email",{required: true })}
+              type="email" 
+              className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" 
+              placeholder="Correo electrónico" 
+            />
+            <input
+              {...register("telefono",{required: true })}
+              type="tel" 
+              className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" 
+              placeholder="Teléfono"
+            />
+            <input
+              {...register("direccion",{required: true })}
+              type="text"
+              className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Dirección"
+            />
             <select
               {...register("sexo",{required: true })}
               className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -123,12 +171,7 @@ export  function PagRegistro() {
               className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Establecimiento de atencion" 
             />
-            <input
-              {...register("email",{required: true })}
-              type="email" 
-              className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" 
-              placeholder="Correo electrónico" 
-            />
+           
             <input
             {...register("password",{required: true })}
             type="password" 
