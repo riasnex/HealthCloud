@@ -7,9 +7,12 @@ export  function PagRegistro() {
   const [tipo, setTipo] = useState("paciente");
 
   const onSubmit = async (values) => {
-    const data = {...values, tipo };
-    await signup(data);
-  }
+    const data = {
+      tipo,
+      ...(tipo === "paciente" ? values.paciente : values.medico)
+    };
+    console.log(data);
+  };
 
   return (
     <div className="min-h-screen bg-[url('/FondoRegistro.png')] bg-cover bg-center flex items-center justify-center px-4">
@@ -19,7 +22,7 @@ export  function PagRegistro() {
       <div className="relative bg-white w-full max-w-md min-h-[500px] rounded-3xl shadow-lg overflow-hidden">
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         {/* Toggle */}
-        <div className="flex justify-center mt-6 space-x-2 z-10 relative">
+        <div className="flex justify-center mt-6 -mb-3 space-x-2 z-10 relative">
           <button
             type="button"
             onClick={() => setTipo("paciente")}
@@ -48,43 +51,43 @@ export  function PagRegistro() {
           <div className="w-1/2 px-8 py-12 flex flex-col items-center justify-center gap-4">
             <h2 className="text-2xl font-bold text-red-600 mb-4 text-center">Registro Paciente</h2>
             <input
-              {...register("nombre",{required: true })}
+              {...register("paciente.nombre",{required: true })}
               type="text" 
               className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Nombre completo"
               />
             <input
-              {...register("rut",{required: true })}
+              {...register("paciente.rut",{required: true })}
               type="text"
               className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Rut"
             />
             <input
-              {...register("email",{required: true })}
+              {...register("paciente.email",{required: true })}
               type="email" 
               className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" 
               placeholder="Correo electrónico" 
             />
             <input
-              {...register("telefono",{required: true })}
+              {...register("paciente.telefono",{required: true })}
               type="tel" 
               className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" 
               placeholder="Teléfono"
             />
             <input
-              {...register("emergencia",{required: true })}
+              {...register("paciente.emergencia",{required: true })}
               type="tel"
               className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Teléfono de emergencia"
             />
             <input
-              {...register("direccion",{required: true })}
+              {...register("paciente.direccion",{required: true })}
               type="text"
               className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Dirección"
             />
             <select
-              {...register("sexo",{required: true })}
+              {...register("paciente.sexo",{required: true })}
               className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               <option value="">Seleccione su sexo</option>
@@ -92,7 +95,7 @@ export  function PagRegistro() {
               <option value="femenino">Femenino</option>
             </select>
             <select
-              {...register("prevision",{required: true })}
+              {...register("paciente.prevision",{required: true })}
               className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               <option value="">Previsión de Salud:</option>
@@ -100,7 +103,7 @@ export  function PagRegistro() {
               <option value="isapres">Isapres</option>
             </select>
             <input
-              {...register("password",{required: true })} 
+              {...register("paciente.password",{required: true })} 
               type="password" 
               className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" 
               placeholder="Contraseña" 
@@ -109,7 +112,7 @@ export  function PagRegistro() {
             <div className="flex items-center gap-2">
               <input
                 type="checkbox"
-                {...register("terminos",{required: true })}
+                {...register("paciente.terminos",{required: true })}
                 className="w-4 h-4 text-red-600 border-gray-300 rounded focus:ring-red-500"
               />
               <label className ="text-black text-sm">
@@ -129,51 +132,57 @@ export  function PagRegistro() {
             <h2 className="text-2xl font-bold text-red-600 mb-4 text-center">Registro Médico</h2>
             <input 
               type="text" 
-              {...register("nombre",{required: true })} 
+              {...register("medico.nombre",{required: true })} 
               className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Nombre completo" 
             />
             <input
               type="text" 
-              {...register("rut",{required: true })} 
+              {...register("medico.rut",{required: true })} 
               className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Rut"
             />
              <input
-              {...register("email",{required: true })}
+              {...register("medico.email",{required: true })}
               type="email" 
               className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" 
               placeholder="Correo electrónico" 
             />
             <input
-              {...register("telefono",{required: true })}
+              {...register("medico.telefono",{required: true })}
               type="tel" 
               className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" 
               placeholder="Teléfono"
             />
             <input
-              {...register("direccion",{required: true })}
+              {...register("medico.direccion",{required: true })}
               type="text"
               className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Dirección"
             />
             <select
-              {...register("sexo",{required: true })}
+              {...register("medico.sexo",{required: true })}
               className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               <option value="">Seleccione su sexo</option>
               <option value="masculino">Masculino</option>
               <option value="femenino">Femenino</option>
             </select>
+            <input
+              {...register("medico.especialidad",{required: true })}
+              type="text" 
+              className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Especialidad"
+            />
             <input 
-              {...register("establecimiento",{required: true })}
+              {...register("medico.establecimiento",{required: true })}
               type="text" 
               className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Establecimiento de atencion" 
             />
            
             <input
-            {...register("password",{required: true })}
+            {...register("medico.password",{required: true })}
             type="password" 
             className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Contraseña" 
@@ -181,7 +190,7 @@ export  function PagRegistro() {
             <div className="flex items-center gap-2">
               <input
                 type="checkbox"
-                {...register("terminos",{required: true })}
+                {...register("medico.terminos",{required: true })}
                 className="w-4 h-4 text-red-600 border-gray-300 rounded focus:ring-red-500"
               />
               <label className ="text-black text-sm">
