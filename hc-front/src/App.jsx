@@ -5,6 +5,7 @@ import { PagRegistro } from './paginas/pagregistro'
 import { RegistroPaciente } from './paginas/paciente'
 import { RegistroMedico } from './paginas/medico'
 import { TerminosCondiciones } from './paginas/terminos'
+import { Home } from './paginas/home'
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<PagLogin/>} />
+        <Route path="/home" element={<Home/>} />
         <Route path="/registro" element={<PagRegistro/>} />
         <Route path="/paciente" element={<RegistroPaciente/>} />
         <Route path="/medico" element={<RegistroMedico/>} />
