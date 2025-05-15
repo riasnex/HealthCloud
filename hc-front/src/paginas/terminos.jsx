@@ -50,7 +50,7 @@ export function TerminosCondiciones() {
           </section>
   
           <div className="text-center mt-4">
-            <a href="/registro-paciente" className="text-red-600 underline hover:text-red-800">Volver al registro</a>
+            <a href="/paciente" className="text-red-600 underline hover:text-red-800">Volver al registro</a>
           </div>
         </div>
       </div>

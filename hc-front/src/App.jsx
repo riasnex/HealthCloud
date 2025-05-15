@@ -6,6 +6,7 @@ import { RegistroPaciente } from './paginas/paciente'
 import { RegistroMedico } from './paginas/medico'
 import { TerminosCondiciones } from './paginas/terminos'
 import { Home } from './paginas/home'
+import { PoliticaPrivacidad } from './paginas/privacidad'
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/paciente" element={<RegistroPaciente/>} />
         <Route path="/medico" element={<RegistroMedico/>} />
         <Route path="/terminos" element={<TerminosCondiciones/>} />
+        <Route path="/privacidad" element={<PoliticaPrivacidad/>} />
       </Routes>
     </BrowserRouter>
   </div>

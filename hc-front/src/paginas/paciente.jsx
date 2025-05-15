@@ -63,7 +63,8 @@ export function RegistroPaciente() {
           <div className="flex items-center gap-2">
             <input type="checkbox" {...register("terminos", { required: true })} className="w-4 h-4 text-red-600 border-gray-300 rounded focus:ring-red-500" />
             <label className="text-black text-sm">
-               He leído y acepto los <a href="/terminos" className="text-red-600 underline">términos y condiciones</a>.</label>
+            He leído y acepto los <a href="/terminos" className="text-red-600 underline">términos</a> y la <a href="/privacidad" className="text-red-600 underline">política de privacidad</a>.</label>
+               
           {errors.terminos && <span className="text-red-500 text-sm">Debe aceptar los términos.</span>}
           </div>
           <button type="submit" className="bg-red-600 px-20 py-2 rounded-xl text-white">Registrarse</button>

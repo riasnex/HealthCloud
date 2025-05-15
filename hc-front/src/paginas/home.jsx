@@ -42,7 +42,7 @@ export function Home() {
 
         <div className="text-xs text-gray-500 mt-6 space-x-3">
           <Link to="/terminos" className="hover:underline">Términos</Link>
-          <Link to="/politica-privacidad" className="hover:underline">Privacidad</Link>
+          <Link to="/privacidad" className="hover:underline">Privacidad</Link>
           <Link to="/soporte" className="hover:underline">Soporte</Link>
           <Link to="/quienes-somos" className="hover:underline">Quiénes Somos</Link>
         </div>
