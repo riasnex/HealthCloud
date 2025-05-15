@@ -2,15 +2,19 @@ import { Link } from "react-router-dom";
 
 export function PoliticaPrivacidad() {
   return (
-    <div className="min-h-screen bg-[url('/FondoRegistro.png')] bg-cover bg-center flex items-center justify-center px-4">
+    <div className="min-h-screen bg-[url('/FondoRegistro.png')] bg-cover bg-center flex items-center justify-center px-2 sm:px-4">
+      {/* Logo superior */}
       <div className="absolute top-4 left-4">
-        <img src="/LogoHC.png" alt="Logo HealthCloud" className="h-20" />
+        <img src="/LogoHC.png" alt="Logo HealthCloud" className="h-14 sm:h-20" />
       </div>
 
-      <div className="relative bg-white w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-3xl shadow-lg p-10 space-y-6">
-        <h1 className="text-2xl font-bold text-red-600 text-center">Política de Privacidad</h1>
+      {/* Contenido central */}
+      <div className="bg-white bg-opacity-90 w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-3xl shadow-xl p-4 sm:p-10 space-y-6">
+        <h1 className="text-xl sm:text-2xl font-bold text-red-600 text-center">
+          Política de Privacidad
+        </h1>
 
-        <section className="text-justify text-gray-800 text-sm space-y-4">
+        <section className="text-justify text-gray-800 text-xs sm:text-sm space-y-4">
           <p>
             En HealthCloud, la protección de tus datos personales y médicos es una prioridad. Esta política explica cómo recopilamos, usamos, almacenamos y protegemos tu información, en conformidad con la legislación vigente en Chile.
           </p>
@@ -29,67 +33,66 @@ export function PoliticaPrivacidad() {
           </ul>
 
           <h2 className="font-semibold text-red-600">2. Uso de la información</h2>
-          <p>Los datos recopilados se utilizan para:</p>
           <ul className="list-disc pl-5">
             <li>Crear y gestionar tu cuenta</li>
             <li>Permitir el almacenamiento y acceso a tus documentos médicos</li>
             <li>Facilitar la recuperación de tu cuenta</li>
             <li>Generar códigos QR temporales para compartir tu información</li>
-            <li>Proveer funcionalidades como edición de perfil, visualización de historial y gestión de citas</li>
+            <li>Proveer funcionalidades como edición de perfil, historial y citas</li>
           </ul>
 
           <h2 className="font-semibold text-red-600">3. Almacenamiento y seguridad</h2>
           <p>
-            Los datos son almacenados en bases de datos NoSQL (MongoDB) bajo medidas de seguridad técnicas como cifrado, autenticación y control de acceso. También se realizan respaldos periódicos para garantizar la disponibilidad.
+            Los datos se almacenan en MongoDB bajo cifrado, autenticación y medidas de seguridad organizativas alineadas a la Norma Técnica N.º 147 del MINSAL.
           </p>
 
           <h2 className="font-semibold text-red-600">4. Acceso y control de la información</h2>
           <p>
-            Puedes acceder, modificar o eliminar tu información desde tu perfil en cualquier momento. También puedes revocar accesos otorgados mediante códigos QR una vez expirados.
+            Puedes acceder, modificar o eliminar tu información desde tu perfil. Los códigos QR que compartes expiran y revocan el acceso automáticamente.
           </p>
 
           <h2 className="font-semibold text-red-600">5. Compartición de datos</h2>
           <p>
-            No compartimos tu información con terceros, salvo autorización explícita mediante funcionalidades como el código QR temporal. Nunca comercializamos tus datos.
+            No compartimos tu información con terceros, salvo autorización explícita (por ejemplo, con QR). Nunca vendemos tus datos.
           </p>
 
           <h2 className="font-semibold text-red-600">6. Derechos del titular</h2>
           <p>
-            En conformidad con la Ley 19.628 y la Ley 20.584, tienes derecho a acceder, rectificar, cancelar y oponerte al tratamiento de tus datos personales. Puedes ejercer estos derechos contactando a nuestro equipo de soporte.
+            Según las leyes chilenas, puedes acceder, rectificar, eliminar y oponerte al tratamiento de tus datos personales en cualquier momento.
           </p>
 
           <h2 className="font-semibold text-red-600">7. Retención y eliminación</h2>
           <p>
-            Conservamos tus datos mientras tu cuenta esté activa. Puedes solicitar la eliminación total de tu cuenta y documentos, lo que conllevará la eliminación definitiva de tu información de nuestros sistemas.
+            Conservamos tus datos mientras tu cuenta esté activa. Si solicitas su eliminación, se eliminará de forma segura y permanente.
           </p>
 
           <h2 className="font-semibold text-red-600">8. Marco Legal Aplicable</h2>
-          <p>
-            HealthCloud opera conforme a las siguientes normativas chilenas:
-          </p>
           <ul className="list-disc pl-5">
             <li>
-              <strong>Ley N.º 19.628</strong> sobre Protección de la Vida Privada, que regula el tratamiento de datos personales y sensibles.
+              <strong>Ley N.º 19.628</strong> sobre Protección de la Vida Privada.
             </li>
             <li>
-              <strong>Ley N.º 20.584</strong> sobre los Derechos y Deberes de las Personas en Atención de Salud, que garantiza el derecho del paciente a la confidencialidad, acceso y resguardo de su información clínica.
+              <strong>Ley N.º 20.584</strong> sobre Derechos y Deberes de las Personas en su Atención de Salud.
             </li>
             <li>
-              <strong>Norma Técnica N.º 147</strong> del Ministerio de Salud, que establece requisitos mínimos para la seguridad, disponibilidad y confidencialidad de los sistemas que almacenan fichas clínicas electrónicas.
+              <strong>Norma Técnica N.º 147</strong> del Ministerio de Salud, sobre seguridad en sistemas de fichas clínicas electrónicas.
             </li>
           </ul>
           <p>
-            Al usar nuestra plataforma, aceptas que el tratamiento de tus datos personales se realiza conforme a estas normativas.
+            Al usar nuestra plataforma, aceptas que el tratamiento de tus datos se rige por este marco legal.
           </p>
 
           <h2 className="font-semibold text-red-600">9. Modificaciones a esta política</h2>
           <p>
-            Nos reservamos el derecho de actualizar esta política. Los cambios serán comunicados en la plataforma. El uso continuo del sistema implicará la aceptación de dichas modificaciones.
+            Nos reservamos el derecho de modificar esta política. Los cambios se informarán a través de la plataforma.
           </p>
         </section>
 
         <div className="text-center mt-4">
-          <Link to="/paciente" className="text-red-600 underline hover:text-red-800">
+          <Link
+            to="/paciente"
+            className="text-red-600 underline hover:text-red-800"
+          >
             Volver al registro
           </Link>
         </div>
