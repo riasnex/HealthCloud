@@ -7,6 +7,7 @@ import { RegistroMedico } from './paginas/medico'
 import { TerminosCondiciones } from './paginas/terminos'
 import { Home } from './paginas/home'
 import { PoliticaPrivacidad } from './paginas/privacidad'
+import { CentrosMedicos } from './paginas/centros'
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/medico" element={<RegistroMedico/>} />
         <Route path="/terminos" element={<TerminosCondiciones/>} />
         <Route path="/privacidad" element={<PoliticaPrivacidad/>} />
+        <Route path="/centros" element={<CentrosMedicos/>} />
       </Routes>
     </BrowserRouter>
   </div>
