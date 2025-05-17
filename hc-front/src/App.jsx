@@ -8,6 +8,7 @@ import { TerminosCondiciones } from './paginas/terminos'
 import { Home } from './paginas/home'
 import { PoliticaPrivacidad } from './paginas/privacidad'
 import { CentrosMedicos } from './paginas/centros'
+import { SobreNosotros } from './paginas/nosotros'
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="/terminos" element={<TerminosCondiciones/>} />
         <Route path="/privacidad" element={<PoliticaPrivacidad/>} />
         <Route path="/centros" element={<CentrosMedicos/>} />
+        <Route path="/nosotros" element={<SobreNosotros/>} />
       </Routes>
     </BrowserRouter>
   </div>

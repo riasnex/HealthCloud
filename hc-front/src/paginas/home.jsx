@@ -44,7 +44,7 @@ export function Home() {
           <Link to="/terminos" className="hover:underline">Términos</Link>
           <Link to="/privacidad" className="hover:underline">Privacidad</Link>
           <Link to="/soporte" className="hover:underline">Soporte</Link>
-          <Link to="/quienes-somos" className="hover:underline">Quiénes Somos</Link>
+          <Link to="/nosotros" className="hover:underline">Quiénes Somos</Link>
         </div>
       </div>
 

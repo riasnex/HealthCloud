@@ -15,7 +15,7 @@ export function PagLogin() {
     return (
         <div className="min-h-screen bg-[url('/FondoRegistro.png')] bg-cover bg-center flex items-center justify-center px-4">
       <div className="absolute top-4 left-4">
-        <img src="/LogoHC.png" alt="Logo" className="h-26" />
+        <img src="/LogoHC.png" alt="Logo" className="h-14 sm:h-20" /> 
       </div>
             <div className="relative bg-white w-full max-w-md h-[450px] rounded-3xl shadow-lg overflow-hidden flex flex-col justify-center p-8">
             <h2 className="text-3xl font-bold text-red-600 mb-6 text-center">Iniciar Sesión</h2>
