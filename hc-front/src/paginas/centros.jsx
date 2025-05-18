@@ -12,16 +12,19 @@ export function CentrosMedicos() {
     },
     {
       nombre: "Clínica Dávila",
-      enlace:
-        "https://www.davila.cl/consultasmedicas/reservas-de-hora/?utm_source=google&utm_medium=cpc&utm_campaign=aon_google_marca&gad_source=1&gad_campaignid=19794732956&gbraid=0AAAAAC6uXXo_71dF7aHGpW4UnU1I9K5x6&gclid=Cj0KCQjwoZbBBhDCARIsAOqMEZXdod_4SaNDFa7UTmL399gs20Fd7SYIpupawL8MtbPJeYv9Bb-3kEgaAiC5EALw_wcB/",
+      enlace: "https://www.davila.cl/consultasmedicas/reservas-de-hora/?utm_source=google&utm_medium=cpc&utm_campaign=aon_google_marca&gad_source=1&gad_campaignid=19794732956&gbraid=0AAAAAC6uXXo_71dF7aHGpW4UnU1I9K5x6&gclid=Cj0KCQjwoZbBBhDCARIsAOqMEZXdod_4SaNDFa7UTmL399gs20Fd7SYIpupawL8MtbPJeYv9Bb-3kEgaAiC5EALw_wcB/",
     },
     {
       nombre: "Hospital Clínico UC Christus",
       enlace: "https://agenda.ucchristus.cl/reserva-horas/busqueda/",
     },
     {
-      nombre: "Hospital del Salvador",
-      enlace: "https://www.hospitalsalvador.cl/",
+      nombre: "Integra Médica",
+      enlace: "https://www.integramedica.cl/integramedica/agendamiento/",
+    },
+    {
+      nombre: "Red Salud",
+      enlace: "https://agenda.redsalud.cl/patientPortal/identifyPatient/",
     },
     {
       nombre: "Clínica Las Condes",

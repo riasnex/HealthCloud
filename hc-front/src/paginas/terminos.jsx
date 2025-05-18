@@ -1,4 +1,3 @@
-// src/pages/TerminosCondiciones.jsx
 export function TerminosCondiciones() {
     return (
       <div className="min-h-screen bg-[url('/FondoRegistro.png')] bg-cover bg-center flex items-center justify-center px-4">

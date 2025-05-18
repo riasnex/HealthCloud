@@ -94,6 +94,9 @@ export const registerSchemapaciente = z.object({
     sexo:z.string({
         required_error:"El sexo es requerido"}).refine(value => ["masculino", "femenino"].includes(value), {message: "Debe seleccionar un sexo valido",
     }),
+    fnacimiento: z.string({
+        required_error:"La fecha de nacimiento es requerida"}).regex(/^\d{4}-\d{2}-\d{2}$/, { message: "La fecha de nacimiento debe estar en el formato YYYY-MM-DD",
+    }),
     prevision: z.string({
         required_error:"La previsión es requerida"}).refine(value => ["fonasa", "isapre"].includes(value), {message: "Debe seleccionar una previsión válida",
     }),
@@ -122,7 +125,9 @@ export const registerSchemamedico = z.object({
     sexo:z.string({
         required_error:"El sexo es requerido"}).refine(value => ["masculino", "femenino"].includes(value), {message: "Debe seleccionar un sexo valido",
     }),
-    
+    fnacimiento: z.string({
+        required_error:"La fecha de nacimiento es requerida"}).regex(/^\d{4}-\d{2}-\d{2}$/, { message: "La fecha de nacimiento debe estar en el formato YYYY-MM-DD",
+    }),
     especialidad: z.string({
         required_error:"La especialidad es requerida"}).min(1, { message: "La especialidad no puede estar vacia",
     }),

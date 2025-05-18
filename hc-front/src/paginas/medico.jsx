@@ -55,6 +55,11 @@ export function RegistroMedico() {
             <option value="femenino">Femenino</option>
           </select>
           {errors.sexo && <span className="text-red-500 text-sm">{errors.sexo.message}</span>}
+          <input {...register("fnacimiento", { required: true })}
+          type="date"
+          className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          placeholder="Fecha de nacimiento" />
+          {errors.fnacimiento && <span className="text-red-500 text-sm">{errors.fnacimiento.message}</span>}
           <input {...register("especialidad", { required: true })} 
           type="text" 
           className="w-8/12 border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" 
