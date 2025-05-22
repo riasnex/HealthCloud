@@ -33,7 +33,7 @@ function CitasMedicas() {
   }
 
   return (
-    <div className="min-h-screen bg-white text-white">
+    <div className="bg-[url('/FondoRegistro.png')] bg-cover bg-center min-h-screen text-white">
       <div className="flex justify-between items-center px-8 pt-8">
         <h1 className="text-4xl font-bold text-red-600 font-bold text-center">
           Citas Médicas Activas

@@ -53,10 +53,10 @@ function CodigoQR() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen gap-8">
+    <div className="bg-[url('/FondoRegistro.png')] bg-cover bg-center flex flex-col items-center justify-center min-h-screen gap-8">
       <button
         onClick={generateQR}
-        className="flex items-center justify-center w-12 h-12 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+        className="flex items-center justify-center w-12 h-12 bg-red-600 text-white rounded-lg hover:bg-red-700"
         aria-label="Generar Código QR"
         title="Generar Código QR"
       >
