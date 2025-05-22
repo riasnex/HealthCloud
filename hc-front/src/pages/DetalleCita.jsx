@@ -41,15 +41,15 @@ function DetalleCita() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-800 text-white p-8">
+    <div className="min-h-screen bg-white text-white p-8">
       <button
         onClick={() => navigate(-1)}
-        className="mb-6 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
+        className="mb-6 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded"
       >
         Volver
       </button>
       <div className="bg-white rounded-2xl p-6 shadow-lg max-w-xl mx-auto text-gray-800">
-        <h2 className="text-3xl font-bold text-blue-600 mb-4">
+        <h2 className="text-3xl font-bold text-red-600 mb-4">
           Detalle de la Cita
         </h2>
         <p className="mb-2">

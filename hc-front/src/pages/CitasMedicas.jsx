@@ -33,17 +33,12 @@ function CitasMedicas() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-800 text-white">
+    <div className="min-h-screen bg-white text-white">
       <div className="flex justify-between items-center px-8 pt-8">
-        <h1 className="text-4xl font-bold text-blue-400">
+        <h1 className="text-4xl font-bold text-red-600 font-bold text-center">
           Citas Médicas Activas
         </h1>
-        {/* Aquí puedes agregar más botones o acciones en el futuro */}
         <div className="space-x-4">
-          {/* Ejemplo de botón adicional:
-          <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
-            Nueva Cita
-          </button> */}
         </div>
       </div>
 
@@ -59,7 +54,7 @@ function CitasMedicas() {
                 className="w-full text-left bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition border-2 border-gray-200 hover:border-blue-500"
               >
                 <div className="mb-3">
-                  <h2 className="text-xl font-bold text-blue-600">
+                  <h2 className="text-xl font-bold text-red-600">
                     {cita.especialidad}
                   </h2>
                   <p className="text-sm text-gray-500">

@@ -3,7 +3,7 @@ import { QRCodeSVG } from 'qrcode.react'
 
 function CodigoQR() {
   const [qrValue, setQrValue] = useState('')
-  const [timeLeft, setTimeLeft] = useState(0) // en segundos
+  const [timeLeft, setTimeLeft] = useState(0)
   const timerRef = useRef(null)
   const countdownRef = useRef(null)
 
@@ -14,7 +14,7 @@ function CodigoQR() {
       email: 'juan.perez@example.com',
     }
 
-    const expiration = Date.now() + 15 * 60 * 1000 // 15 minutos en ms
+    const expiration = Date.now() + 15 * 60 * 1000
     const token = btoa(JSON.stringify({ patientProfile, expiration }))
 
     setQrValue(token)
