@@ -9,7 +9,7 @@ export function PoliticaPrivacidad() {
       </div>
 
       {/* Contenido central */}
-      <div className="bg-white bg-opacity-90 w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-3xl shadow-xl p-4 sm:p-10 space-y-6">
+      <div className="bg-white bg-opacity-90 w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-3xl shadow-xl p-4 sm:p-10 space-y-6 z-10">
         <h1 className="text-xl sm:text-2xl font-bold text-red-600 text-center">
           Política de Privacidad
         </h1>
@@ -90,7 +90,7 @@ export function PoliticaPrivacidad() {
 
         <div className="text-center mt-4">
           <Link
-            to="/paciente"
+            to="/home"
             className="text-red-600 underline hover:text-red-800"
           >
             Volver al registro

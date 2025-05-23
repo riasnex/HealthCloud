@@ -2,7 +2,7 @@ export function TerminosCondiciones() {
     return (
       <div className="min-h-screen bg-[url('/FondoRegistro.png')] bg-cover bg-center flex items-center justify-center px-4">
         <div className="absolute top-4 left-4">
-          <img src="/LogoHC.png" alt="Logo" className="h-26" />
+          <img src="/LogoHC.png" alt="Logo" className="h-14 sm:h-20" />
         </div>
         <div className="relative bg-white w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-3xl shadow-lg p-10 space-y-6">
           <h1 className="text-2xl font-bold text-red-600 text-center">Términos y Condiciones de Uso</h1>
@@ -49,7 +49,7 @@ export function TerminosCondiciones() {
           </section>
   
           <div className="text-center mt-4">
-            <a href="/paciente" className="text-red-600 underline hover:text-red-800">Volver al registro</a>
+            <a href="/home" className="text-red-600 underline hover:text-red-800">Volver al registro</a>
           </div>
         </div>
       </div>

@@ -17,7 +17,7 @@ export function Home() {
     <>
       <div className="bg-[url('/FondoRegistro.png')] bg-cover bg-center min-h-screen flex items-center justify-center px-4 pt-20">
         <div className="absolute top-4 left-4">
-          <img src="/LogoHC.png" alt="Logo HealthCloud" className="h-20" />
+          <img src="/LogoHC.png" alt="Logo HealthCloud" className="h-14 sm:h-20 " />
         </div>
 
         <div className="bg-white bg-opacity-90 max-w-2xl w-full rounded-3xl shadow-xl p-10 flex flex-col items-center space-y-6 text-center">
@@ -51,7 +51,10 @@ export function Home() {
 
         {/* Modal */}
         {modalAbierto && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="fixed inset-0 bg-[url('/FondoRegistro.png')] bg-cover bg-center min-h-screen flex items-center justify-center z-50">
+            <div className="absolute top-4 left-4">
+            <img src="/LogoHC.png" alt="Logo HealthCloud" className="h-14 sm:h-20 " />
+            </div>
             <div className="bg-white rounded-2xl p-8 w-80 shadow-lg text-center space-y-4">
               <h2 className="text-xl font-semibold text-red-600">¿Cómo deseas registrarte?</h2>
               <button

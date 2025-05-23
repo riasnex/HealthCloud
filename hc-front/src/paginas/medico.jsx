@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
 import { registerSchemamedico } from "../schema/auth.js";
+import { ArrowLeft } from "lucide-react";
 
 export function RegistroMedico() {
   const { register, handleSubmit, formState: { errors } } = useForm({
@@ -18,10 +19,18 @@ export function RegistroMedico() {
   return (
     <div className="min-h-screen bg-[url('/FondoRegistro.png')] bg-cover bg-center flex items-center justify-center px-4">
       <div className="absolute top-4 left-4">
-        <img src="/LogoHC.png" alt="Logo" className="h-26" />
+        <img src="/LogoHC.png" alt="Logo" className="h-14 sm:h-20" />
       </div>
-      <div className="relative bg-white w-full max-w-md min-h-[500px] rounded-3xl shadow-lg overflow-hidden">
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 px-8 py-12 flex flex-col items-center justify-center gap-4">
+      <div className="relative bg-white w-full max-w-md min-h-[500px] rounded-3xl shadow-lg overflow-hidden my-10">
+        {/* Flecha de regreso */}
+        <button
+          onClick={() => window.history.back()}
+          className="absolute top-4 left-4 text-red-600 hover:text-red-800 transition-colors"
+          aria-label="Volver"
+          >
+          <ArrowLeft className="w-8 h-8 stroke-[2.5]" />
+          </button>
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 px-8 py-8 flex flex-col items-center justify-center gap-1">
           <h2 className="text-2xl font-bold text-red-600 mb-4 text-center">Registro Médico</h2>
           <input {...register("nombre", { required: true })} 
           type="text" 
@@ -80,7 +89,7 @@ export function RegistroMedico() {
             <label className="text-black text-sm">
               He leído y acepto los <a href="/terminos" className="text-red-600 underline">términos</a> y la <a href="/privacidad" className="text-red-600 underline">política de privacidad</a>.</label>
           </div>
-          <button type="submit" className="bg-red-600 px-20 py-2 rounded-xl text-white">Registrarse</button>
+          <button type="submit" className="bg-red-600 hover:bg-red-800 px-20 py-2 rounded-xl text-white">Registrarse</button>
         </form>
       </div>
     </div>
